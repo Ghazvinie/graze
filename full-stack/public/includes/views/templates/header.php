@@ -9,5 +9,10 @@
 <body class='body'>
     <img src='static/assets/logo.svg' style='width:160px; height: auto; display: block; margin-bottom: 1rem;'>
     <div>
-        HEADER
+        <form>
+        Account ID:
+        <input type='text' action='../boxes.php' method='GET'/> 
+        <button>Submit</button>
+        </form>
+
     </div>
