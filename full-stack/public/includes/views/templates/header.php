@@ -6,20 +6,25 @@
     <title>Graze</title>
 </head>
 
-<body class=''>
-    <nav>
-        <div class='nav-wrapper'>
-        <img src='static/assets/logo.svg' style='width:160px; height: auto; display: block; margin-bottom: 1rem;'>
+<body class='container bg-success bg-opacity-10'>
+<nav class="navbar navbar-expand-lg navbar-light bg-success bg-gradient bg-opacity-25">
+  <div class="container-fluid">
+    <img src='static/assets/logo.svg' style='width:160px; height: auto; display: block; margin-bottom: 1rem;'>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <ul>
-            <li>Input</li>
-        </ul>
-        </div>
-
-    </nav>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Account ID" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</nav>
     <!-- <div class="row container nav-wrapper">
 
 
+        <img src='static/assets/logo.svg' style='width:160px; height: auto; display: block; margin-bottom: 1rem;'>
 
         <div class='row'>
             <form class='input-field inline'>
