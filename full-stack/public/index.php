@@ -4,7 +4,7 @@
 <html lang="en">
 <?php include __DIR__ . '/includes/views/templates/header.php'; ?>
 
-
+<h1>INDEX</h1>
 
 <?php include __DIR__ . '/includes/views/templates/footer.php'; ?>
 </html>
@@ -18,6 +18,13 @@
 <?php
 
 // require __DIR__. '/includes/classes/test.class.php';
+ require __DIR__. '/includes/classes/route.php';
+
+
+ $route = new Router();
+ $route->get('/', 'home.php');
+ $route->get('/boxes', 'boxes.php')
+
 // echo 'INDEdX';
 // echo realPath(dirname(__FILE__)).'/classes/test.class.php';
 // Check for database connectivity

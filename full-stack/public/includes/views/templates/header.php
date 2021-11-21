@@ -11,8 +11,8 @@
     <div>
         <form>
         Account ID:
-        <input type='text' action='../boxes.php' method='GET'/> 
-        <button>Submit</button>
+        <input type='text' action='../boxes' method='GET'/> 
+        <button type='submit'>Submit</button>
         </form>
 
     </div>
