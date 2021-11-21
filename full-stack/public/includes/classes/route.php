@@ -7,7 +7,6 @@ class Router
     public function get($route, $view)
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-            echo 'hio';
             return false;
         };
 
@@ -20,6 +19,7 @@ class Router
 
     public function post($route, $view)
     {
+      
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             return false;
         };
@@ -27,7 +27,7 @@ class Router
         $uri = $_SERVER['REQUEST_URI'];
         if ($uri === $route) {
             $this->success = true;
-            return include_once(__DIR__ . './views/' . $view);
+            return include_once('/var/www/public/includes/views/' . $view);
         };
     }
 

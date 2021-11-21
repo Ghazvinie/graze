@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include __DIR__ . '/includes/views/templates/header.php'; ?>
-
+<?php 
+if(isset($_POST['submit'])){
+    echo $_POST['account_id'];
+}
+?>
 <h1>INDEX</h1>
 
 <?php
@@ -9,7 +13,7 @@ require __DIR__ . '/includes/classes/route.php';
 
 
 $route = new Router();
-$route->get('/boxes', 'boxes.php')
+$route->post('/boxes', 'boxes.php')
 ?>
 
 
