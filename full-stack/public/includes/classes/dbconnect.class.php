@@ -9,7 +9,7 @@ class DBConnect{
     private $connection;
 
     // Connect to database
-    protected function connectToDb(){
+    protected function connectToDB(){
         $this->connection = null;
 
         try {
