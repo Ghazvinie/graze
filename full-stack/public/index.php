@@ -1,28 +1,24 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
+<?php include __DIR__ . '/includes/views/templates/header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='./styles.css' type='text/css' />
-    <title>Document</title>
-</head>
 
-<body class='body'>
-    <img src='static/assets/logo.svg' style='width:160px; height: auto; display: block; margin-bottom: 1rem;'>
 
-    <div>
-
-    </div>
-</body>
-
+<?php include __DIR__ . '/includes/views/templates/footer.php'; ?>
 </html>
+
+
+
+
+
+
 
 <?php
 
-require __DIR__. '/includes/classes/test.class.php';
-echo 'INDEdX';
+// require __DIR__. '/includes/classes/test.class.php';
+// echo 'INDEdX';
 // echo realPath(dirname(__FILE__)).'/classes/test.class.php';
 // Check for database connectivity
 // try {
@@ -62,5 +58,5 @@ echo 'INDEdX';
 //         require __DIR__ . '/includes/views/boxes.php';
 //         break;
 // }
-echo $_GET['url'];
+
 ?>
