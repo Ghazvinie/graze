@@ -1,0 +1,8 @@
+{
+  "name": "graze/graze-full-stack-coding-test",
+  "description": "Full stack skeleton project",
+  "platform": {
+    "php": "7.4"
+  },
+  "require": {}
+}
