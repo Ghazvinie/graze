@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php require __DIR__ . '/includes/views/templates/header.php'; ?>
 <?php require __DIR__ . '/includes/router/routes.php'; ?>
-<?php
 
-// echo $_SERVER['REQUEST_METHOD'];
-// ?>
 <h1>INDEX</h1>
+
+
+
 
 
 
@@ -15,6 +13,17 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

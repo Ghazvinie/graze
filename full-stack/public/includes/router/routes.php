@@ -1,7 +1,10 @@
 <?php
-require '/var/www/public/includes/classes/route.php';
+require '/var/www/public/includes/classes/router.class.php';
 
 $route = new Router();
-$route->post('/boxes', 'boxes.php');
+
+// Home Routes
 $route->get('/', 'home.php');
 $route->get('', 'home.php');
+
+$route->post('/boxes', 'boxes.php');  // Boxes POST Route
