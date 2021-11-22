@@ -10,7 +10,7 @@
     <nav class='navbar navbar-expand-lg navbar-light bg-success bg-gradient bg-opacity-25'>
         <div class='container-fluid'>
             <img src='static/assets/logo.svg' style='width:160px; height: auto; display: block; margin-bottom: 1rem;'>
-            <form class='d-flex' action='/boxes.php' method='POST'>
+            <form class='d-flex' action='/boxes' method='POST'>
                 <input class='form-control me-2' name='account_id' type='text' placeholder='Account ID' >
                 <button class='btn btn-outline-success' type='submit'>Submit</button>
             </form>
