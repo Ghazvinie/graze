@@ -13,13 +13,18 @@ class BoxesView extends Box {
     public function showProducts($id){
         $boxId = $this->getBoxes($id)[0]['id'];
 
-        $boxToProduct = $this->getBoxToProduct($boxId);
-        foreach ($boxToProduct as $id) {
-            echo $id['product_id'] . "<br/>\n";
+        $boxToProductIds = $this->getBoxToProduct($boxId);
+        $products = array();
+        foreach ($boxToProductIds as $id) {
+            $products[] = $id['product_id'];
         }
+        print_r($products);
         // echo 'Box ID: '. $results[0]['box_id'];
         // echo 'Delivery Date: ' . $results[0]['delivery_date']; 
+        // 508, 
     }
+
+
 
 
 }

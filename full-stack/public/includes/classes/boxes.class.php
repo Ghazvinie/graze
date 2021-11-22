@@ -48,5 +48,10 @@ class Box extends DBConnect {
         return $results;
     }
 
+    // protected function setRating($productId, $accountId, $rating){   
+    //     $sql = ""
+
+    // }
+
 
 }
