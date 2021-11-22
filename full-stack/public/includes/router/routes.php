@@ -1,5 +1,6 @@
 <?php
-require '/var/www/public/includes/classes/router.class.php';
+require dirname(__DIR__) . '/classes/router.class.php';
+
 
 $route = new Router();
 
