@@ -1,7 +1,48 @@
-<h1>BOXES<h1>
-<?php
-// if (isset($_POST['submit'])) {
-//     echo $_POST['account_id'];
-// };
-
-echo $_POST['account_id'];
+<div class='container justify-content-center align-items-center'>
+    <div class='row row-cols-4'>
+        <div>
+            <div>
+                Box Date
+            </div>
+            <div>
+                Box Contents
+            </div>
+            <div>
+                Box Rating 
+            </div>
+        </div>
+        <div>
+            <div>
+                Box Date
+            </div>
+            <div>
+                Box Contents
+            </div>
+            <div>
+                Box Rating 
+            </div>
+        </div>
+        <div>
+            <div>
+                Box Date
+            </div>
+            <div>
+                Box Contents
+            </div>
+            <div>
+                Box Rating 
+            </div>
+        </div>
+        <div>
+            <div>
+                Box Date
+            </div>
+            <div>
+                Box Contents
+            </div>
+            <div>
+                Box Rating 
+            </div>
+        </div>
+    </div>
+</div>
