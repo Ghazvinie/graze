@@ -32,8 +32,9 @@
 
 <?php
 
-// require __DIR__. '/includes/classes/test.class.php';
-
+require __DIR__. '/includes/classes/boxesview.class.php';
+$boxesObj = new BoxesView();
+$boxesObj->showProducts(170111)
 
 // echo 'INDEdX';
 // echo realPath(dirname(__FILE__)).'/classes/test.class.php';

@@ -13,7 +13,7 @@
         <div class='container-fluid'>
             <img src='static/assets/logo.svg' style='width:160px; height: auto; display: block; margin-bottom: 1rem;'>
             <form class='d-flex' action='/boxes' method='POST'>
-                <input class='form-control me-2' name='account_id' type='text' placeholder='Account ID' >
+                <input class='form-control me-2' name='account_id' type='text' placeholder='Account ID (Number)' pattern='[0-9]+'>
                 <button class='btn btn-outline-success' type='submit'>Submit</button>
             </form>
         </div>
