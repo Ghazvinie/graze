@@ -1,5 +1,6 @@
 <?php
-require dirname(__DIR__) . '/classes/boxes.class.php';
+
+require_once dirname(__FILE__) . '/boxes.class.php';
 
 class BoxesView extends Box {
 

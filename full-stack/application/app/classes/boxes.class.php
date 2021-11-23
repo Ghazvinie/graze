@@ -1,5 +1,5 @@
 <?php
-require dirname(__FILE__) . '/dbconnect.class.php';
+require_once dirname(__FILE__) . '/dbconnect.class.php';
 
 class Box extends DBConnect {
 

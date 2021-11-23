@@ -27,7 +27,7 @@ class Router
         $uri = $_SERVER['REQUEST_URI'];
         if ($uri === $route) {
             $this->success = true;
-            return include_once(dirname(__DIR__, 2) . '/public/views/' . $view);
+            return include(dirname(__DIR__, 2) . '/public/views/' . $view);
         };
     }
 

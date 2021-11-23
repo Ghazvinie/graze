@@ -1,5 +1,4 @@
 <?php
-
 class DBConnect{
     // Database parameters
     private $host = 'database';
