@@ -13,7 +13,7 @@ class Router
         $uri = $_SERVER['REQUEST_URI'];
         if ($uri === $route) {
             $this->success = true;
-            return include_once(dirname(__DIR__) . '/views/' . $view);
+            return include_once(dirname(__DIR__, 2) . '/public/views/' . $view);
         };
     }
 
@@ -27,7 +27,7 @@ class Router
         $uri = $_SERVER['REQUEST_URI'];
         if ($uri === $route) {
             $this->success = true;
-            return include_once(dirname(__DIR__) .'/views/' . $view);
+            return include_once(dirname(__DIR__, 2) . '/public/views/' . $view);
         };
     }
 
@@ -35,7 +35,7 @@ class Router
     function __destruct()
     {
         if (!$this->success) {
-            return include_once(dirname(__DIR__) .'/views/' . '404.php');
+            return include_once(dirname(__DIR__, 2) . '/public/views/' . '404.php');
         };
     }
 }
