@@ -1,5 +1,5 @@
-<?php require __DIR__ . '/views/templates/header.php'; ?>
-<?php require dirname(__DIR__) . '/app/router/routes.php'; ?>
+<?php require __DIR__ . '/public/views/templates/header.php'; ?>
+<?php require __DIR__ . '/app/router/routes.php'; ?>
 
 <h1>INDEX</h1>
 
@@ -32,8 +32,8 @@
 
 <?php
 
-require dirname(__DIR__). '/app/classes/boxesview.class.php';
-require dirname(__DIR__) . '/app/test.php';
+require __DIR__. '/app/classes/boxesview.class.php';
+require __DIR__ . '/app/test.php';
 echo $danny;
 $boxesObj = new BoxesView();
 $boxesObj->showProducts(170111)

@@ -9,7 +9,7 @@ services:
       - .:/var/www:delegated
     ports:
       - 80:80
-    command: php -S 0.0.0.0:80 -t public
+    command: php -S 0.0.0.0:80 -t ./application
   
   composer:
     image: composer
@@ -22,7 +22,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./db:/docker-entrypoint-initdb.d:cached
+      - ./application/db:/docker-entrypoint-initdb.d:cached
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_USER: graze
