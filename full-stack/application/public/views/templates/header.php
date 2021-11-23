@@ -7,11 +7,14 @@
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>
     <title>Graze</title>
 </head>
+<?php
+
+    ?>
 
 <body class='container bg-success bg-opacity-10'>
     <nav class='navbar navbar-expand-lg navbar-light bg-success bg-gradient bg-opacity-25'>
         <div class='container-fluid'>
-            <img src='static/assets/logo.svg' style='width:160px; height: auto; display: block; margin-bottom: 1rem;'>
+            <img src='./public/static/assets/logo.svg' style='width:160px; height: auto; display: block; margin-bottom: 1rem;'/>
             <form class='d-flex' action='/boxes' method='POST'>
                 <input class='form-control me-2' name='account_id' type='text' placeholder='Account ID (Number)' pattern='[0-9]+'>
                 <button class='btn btn-outline-success' type='submit'>Submit</button>

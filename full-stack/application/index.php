@@ -34,7 +34,6 @@
 
 require __DIR__. '/app/classes/boxesview.class.php';
 require __DIR__ . '/app/test.php';
-echo $danny;
 $boxesObj = new BoxesView();
 $boxesObj->showProducts(170111)
 
