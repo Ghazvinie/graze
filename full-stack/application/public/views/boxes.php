@@ -1,57 +1,53 @@
-<?php 
-require_once dirname(__DIR__, 2). '/app/classes/boxesview.class.php';
+<?php
+require_once dirname(__DIR__, 2) . '/app/classes/boxesview.class.php';
 // echo print_r($_SERVER);
 // echo print_r($_POST['account_id']);
 $boxesObj = new BoxesView();
-echo print_r($boxesObj->showProducts($_POST['account_id']));
-
+$accountId = $_POST['account_id'];
+$productsData = $boxesObj->showProducts($accountId);
 
 ?>
 <div class='container justify-content-center align-items-center'>
     <div class='row row-cols-4'>
         <div>
-            <div>
-                Box Date
-            </div>
-            <div>
-                Box Contents
-            </div>
-            <div>
-                Box Rating 
-            </div>
+            <p>BOX TITLE</p>
+            <ul>
+            <?php
+            foreach ($productsData as $product) {
+                foreach ($product as $productDetails) {
+                    foreach ($productDetails as $key => $value) {
+                        if ($key === 'name') {
+                            //end 
+            ?>
+
+                            <li>
+                                <?php echo $value ?>
+                        </li>
+
+                        <?php // start
+                        }
+                        if ($key === 'image_url') {
+                            
+                        ?>
+
+                            <img src='<?php echo $value ;?>' />
+
+
+                        <?php 
+                        }
+
+
+
+
+                        ?>
+            <?php
+                    }
+                }
+            };
+            ?>
+            </ul>
         </div>
-        <div>
-            <div>
-                Box Date
-            </div>
-            <div>
-                Box Contents
-            </div>
-            <div>
-                Box Rating 
-            </div>
-        </div>
-        <div>
-            <div>
-                Box Date
-            </div>
-            <div>
-                Box Contents
-            </div>
-            <div>
-                Box Rating 
-            </div>
-        </div>
-        <div>
-            <div>
-                Box Date
-            </div>
-            <div>
-                Box Contents
-            </div>
-            <div>
-                Box Rating 
-            </div>
+        
         </div>
     </div>
 </div>
