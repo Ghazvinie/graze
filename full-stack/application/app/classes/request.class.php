@@ -2,9 +2,13 @@
 
 class Request
 {
+    /**
+     * @param uri Request path
+     * @param method Request method
+     */
+
     public $uri;
     public $method;
-
 
     public function __construct()
     {

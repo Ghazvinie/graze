@@ -3,17 +3,18 @@ require_once dirname(__FILE__) . '/request.class.php';
 
 class Router extends Request
 {
+    /**
+     * @param success Routing has been completed successfully
+     */
+
     private $success = false;
 
     public function get($route, $view)
     {
-
-
         if ($this->method !== 'GET') {
             return false;
         };
 
-        
         if ($this->uri === $route) {
             $this->success = true;
             return include_once(dirname(__DIR__, 2) . '/public/views/' . $view);
@@ -22,18 +23,15 @@ class Router extends Request
 
     public function post($route, $view)
     {
-      
         if ($this->method !== 'POST') {
             return false;
         };
-
 
         if ($this->uri === $route) {
             $this->success = true;
             return include_once(dirname(__DIR__, 2) . '/public/views/' . $view);
         };
     }
-
 
     function __destruct()
     {
