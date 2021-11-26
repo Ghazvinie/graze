@@ -1,17 +1,20 @@
 <?php
+require_once dirname(__FILE__) . '/request.class.php';
 
-class Router
+class Router extends Request
 {
     private $success = false;
 
     public function get($route, $view)
     {
-        if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+
+
+        if ($this->method !== 'GET') {
             return false;
         };
 
-        $uri = $_SERVER['REQUEST_URI'];
-        if ($uri === $route) {
+        
+        if ($this->uri === $route) {
             $this->success = true;
             return include_once(dirname(__DIR__, 2) . '/public/views/' . $view);
         };
@@ -20,12 +23,12 @@ class Router
     public function post($route, $view)
     {
       
-        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        if ($this->method !== 'POST') {
             return false;
         };
 
-        $uri = $_SERVER['REQUEST_URI'];
-        if ($uri === $route) {
+
+        if ($this->uri === $route) {
             $this->success = true;
             return include_once(dirname(__DIR__, 2) . '/public/views/' . $view);
         };

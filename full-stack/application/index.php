@@ -2,11 +2,6 @@
 <?php require __DIR__ . '/public/views/templates/header.php'; ?>
 <?php require __DIR__ . '/app/router/routes.php'; ?>
 
-<h1>INDEX</h1>
-
-
-
-
 
 
 
@@ -33,9 +28,8 @@
 
 <?php
 
-$boxesObj = new BoxesView();
-$boxesObj->showProducts(170111)
-
+// echo $_SERVER['REQUEST_URI'];
+// print_r([$_REQUEST]);
 // echo 'INDEdX';
 // echo realPath(dirname(__FILE__)).'/classes/test.class.php';
 // Check for database connectivity
