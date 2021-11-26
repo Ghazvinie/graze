@@ -5,7 +5,7 @@ class Box extends DBConnect {
 
     // Get the boxes for specific account id
     protected function getBoxes($accountId){
-        $sql = "SELECT * FROM box WHERE account_id = ?";
+        $sql = "SELECT id, delivery_date FROM box WHERE account_id = ? ORDER BY delivery_date desc";
         $statement = $this->connectToDB()->prepare($sql);
         $statement->execute([$accountId]);
 
@@ -16,7 +16,7 @@ class Box extends DBConnect {
 
     // Match box to products using box id
     protected function getBoxToProduct($boxId){
-        $sql = "SELECT * FROM box_to_product WHERE box_id = ?";
+        $sql = "SELECT product_id FROM box_to_product WHERE box_id = ?";
         $statement = $this->connectToDB()->prepare($sql);
         $statement->execute([$boxId]);
 
@@ -37,7 +37,6 @@ class Box extends DBConnect {
     }
 
     // Get rating for box or product ? using product id
-
     protected function getRating($productId){
         $sql = "SELECT * FROM rating WHERE product_id = ?";
         $statement = $this->connectToDB()->prepare($sql);
