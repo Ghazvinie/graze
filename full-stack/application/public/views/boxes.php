@@ -9,41 +9,19 @@ $productsData = $boxesObj->showProducts($accountId);
 ?>
 <div class='container justify-content-center align-items-center'>
     <div class='row row-cols-4'>
-        <div>
-            <ul>
-                <?php
-                foreach ($productsData as $product) {
-                    foreach ($product as $productDetails) {
-                        foreach ($productDetails as $key => $value) {
-                            if ($key === 'name') {
-                                //end 
-                ?>
-
-                                <li>
-                                    <?php echo ucwords($value) ?>
-                                </li>
-
-                            <?php // start
-                            }
-                            if ($key === 'image_url') {
-
-                            ?>
-                                <img src='<?php echo $value; ?>' />
-                            <?php
-                            }
-
-
-
-
-                            ?>
-                <?php
-                        }
-                    }
-                };
-                ?>
-            </ul>
-        </div>
-        
+        <?php foreach ($productsData as $key => $product) { ?>
+            <div>
+                <?php foreach ($product as $date => $details) { ?>
+                    <h5><?php echo $date; ?> </h5>
+                    <ul>
+                        <?php foreach ($details as $key => $text) { ?>
+                            <li><?php echo $text['name']; ?></li>
+                            <img src=<?php echo $text['image_url']; ?>></img>
+                        <?php } ?>
+                    </ul>
+                <?php } ?>
+            </div>
+        <?php } ?>
     </div>
 </div>
 </div>

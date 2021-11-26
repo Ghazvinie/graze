@@ -27,7 +27,7 @@ class Box extends DBConnect {
 
     // Get the products for each box using product id
     protected function getProducts($productId){
-        $sql = "SELECT * FROM product WHERE id = ?";
+        $sql = "SELECT id, name, image_url FROM product WHERE id = ?";
         $statement = $this->connectToDB()->prepare($sql);
         $statement->execute([$productId]);
 

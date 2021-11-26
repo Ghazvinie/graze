@@ -2,17 +2,14 @@
 
 require_once dirname(__FILE__) . '/boxes.class.php';
 
-class BoxesView extends Box {
+class BoxesView extends Box
+{
 
-    public function showBoxes($id){
-        $results = $this->getBoxes($id);
 
-        echo 'Box ID: '. $results[0]['id'];
-        echo 'Delivery Date: ' . $results[0]['delivery_date']; 
-    }
 
-    public function showProducts($id){
-        
+    public function showProducts($id)
+    {
+
         // Get the box ids from submitted account id
         // $boxIds = array();
         $boxes = $this->getBoxes($id);
@@ -20,15 +17,22 @@ class BoxesView extends Box {
 
         // Using box id get the product ids
         $makeBoxes = array();
-        foreach($boxes as $individualBox){
-            $makeBoxes[] = $individualBox['delivery_date'];
-            $productIds = $this->getBoxToProduct($individualBox['id']);
-            foreach($productIds as $id){
-                $makeBoxes[] = $this->getProducts($id['product_id']);
-            }
-            
-        };
 
+
+        foreach ($boxes as $date) {
+            $products = array();
+            $productIds = $this->getBoxToProduct($date['id']);
+            foreach ($productIds as $id) {
+                $products[] = $this->getProducts($id['product_id']);
+            }
+            $test = array_merge(...$products);
+            $makeBoxes[] = [$date['delivery_date'] => $test];
+        };
+        // print_r($makeBoxes);
+        // $test = array_combine($deliveryDates, $products);
+        // print_r(array_keys($makeBoxes));
+        // extract($makeBoxes);
+        // echo $delivery_date;
         return $makeBoxes;
 
 
@@ -53,8 +57,4 @@ class BoxesView extends Box {
         // echo 'Delivery Date: ' . $results[0]['delivery_date']; 
         // 508, 
     }
-
-
-
-
 }
