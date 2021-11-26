@@ -7,18 +7,21 @@ $accountId = $_POST['account_id'];
 $productsData = $boxesObj->showProducts($accountId);
 
 ?>
-<div class='container justify-content-center align-items-center'>
-    <div class='row row-cols-4'>
+<div class='container justify-content-center align-items-center mt-4'>
+    <div class='row row-cols-4 justify-content-center align-items-center'>
         <?php foreach ($productsData as $key => $product) { ?>
-            <div>
+            <div class='justify-content-center align-items-center col-md-3 my-5' >
                 <?php foreach ($product as $date => $details) { ?>
-                    <h5><?php echo $date; ?> </h5>
-                    <ul>
+                    <h4 class='text-center'>-Box-</h4>
+                    <h5 class='text-center'>Date Ordered: <?php echo $date; ?> </h5>
+                    <p class='text-center fw-bold'>Contents:</p>
                         <?php foreach ($details as $key => $text) { ?>
-                            <li><?php echo $text['name']; ?></li>
-                            <img src=<?php echo $text['image_url']; ?>></img>
+                            <div class='justify-content-center align-items-center m-2'>
+                            <p class='text-center'><?php echo ucwords( $text['name']); ?></p>
+                            <img width='100%' height='200' class='m-1'  src=<?php echo $text['image_url']; ?>></img>
+                            </div>
                         <?php } ?>
-                    </ul>
+
                 <?php } ?>
             </div>
         <?php } ?>
