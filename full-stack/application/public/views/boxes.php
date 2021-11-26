@@ -1,7 +1,5 @@
 <?php
 require_once dirname(__DIR__, 2) . '/app/classes/boxesview.class.php';
-// echo print_r($_SERVER);
-// echo print_r($_POST['account_id']);
 $boxesObj = new BoxesView();
 $accountId = $_POST['account_id'];
 $productsData = $boxesObj->showProducts($accountId);

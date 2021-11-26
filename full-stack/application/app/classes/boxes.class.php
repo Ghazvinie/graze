@@ -37,10 +37,10 @@ class Box extends DBConnect {
     }
 
     // Get rating for box or product ? using product id
-    protected function getRating($productId){
-        $sql = "SELECT * FROM rating WHERE product_id = ?";
+    protected function getRating($accountId, $productId){
+        $sql = "SELECT rating FROM rating WHERE account_id = ? and product_id = ?";
         $statement = $this->connectToDB()->prepare($sql);
-        $statement->execute([$productId]);
+        $statement->execute([$accountId, $productId]);
 
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
