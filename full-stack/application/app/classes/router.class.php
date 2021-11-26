@@ -9,6 +9,7 @@ class Router extends Request
 
     private $success = false;
 
+    // Server get requests
     public function get($route, $view)
     {
         if ($this->method !== 'GET') {
@@ -21,6 +22,7 @@ class Router extends Request
         };
     }
 
+    // Serve post requests
     public function post($route, $view)
     {
         if ($this->method !== 'POST') {
@@ -33,6 +35,7 @@ class Router extends Request
         };
     }
 
+    // Send to 404 on success failure
     function __destruct()
     {
         if (!$this->success) {
