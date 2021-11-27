@@ -24,7 +24,7 @@ class Router extends Request
     }
 
     // Serve post requests
-    public function post($route, $view)
+    public function post($route, $controller)
     {
         if ($this->method !== 'POST') {
             return false;

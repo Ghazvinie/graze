@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__DIR__, 2) . '/app/classes/boxesview.class.php';
+require_once dirname(__DIR__, 2) . '/app/classes/BoxesView.class.php';
 $boxesObj = new BoxesView();
 $accountId = $_POST['account_id'];
 $rating = $_POST['rating'];
