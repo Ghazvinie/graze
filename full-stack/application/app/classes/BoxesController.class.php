@@ -31,7 +31,7 @@ class BoxesController extends Controller
             $productIds = $this->getBoxToProduct($date['id']); // Get all product ids relating to each box id
             foreach ($productIds as $id) {
                 $products[] = $this->getProducts($id['product_id']); // Get the individual products
-            }
+            };
             $temp = array_merge(...$products); // Products has few empty arrays, remove these
             $makeBoxes[] = [$date['delivery_date'] => $temp]; // Set each box delivery date as key and then products array as value
         };
@@ -47,7 +47,7 @@ class BoxesController extends Controller
         } else {
             $stars = str_repeat('* ', $rating);
             return $stars;
-        }
+        };
     }
 
     // Set product rating
@@ -56,11 +56,10 @@ class BoxesController extends Controller
         $this->setRating($this->accountId, $productId, $num);
     }
 
-    // Sanitise inputs
-
+    // Sanitise input number
     public function sanitiseNum($numToSanitise){
         $numWhiteSpaceRemoved = str_replace(' ', '', $numToSanitise);
         $numToInt = (int)$numWhiteSpaceRemoved;
         return $numToInt;
     }
-}
+};

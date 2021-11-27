@@ -22,4 +22,3 @@ class DBConnect{
         return $this->connection;
     }
 };
-?>

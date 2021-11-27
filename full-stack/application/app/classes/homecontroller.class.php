@@ -8,4 +8,4 @@ class HomeController extends Controller
         // Render the view
         return $this->renderView($view);
     }
-}
+};

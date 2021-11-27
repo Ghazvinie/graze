@@ -36,11 +36,11 @@ class Router extends Request
         };
     }
 
-    // Send to 404 on success failure
+    // Send to 404 on non-success
     function __destruct()
     {
         if (!$this->success) {
             return include_once(dirname(__DIR__, 2) . '/public/views/' . '404.php');
         };
     }
-}
+};

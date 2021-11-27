@@ -1,7 +1,8 @@
 <?php
 require_once dirname(__FILE__) . '/BoxesModel.class.php';
 
-class Controller extends BoxesModel {
+class Controller extends BoxesModel
+{
 
     /**
      * @param viewsDirectory Views directory
@@ -9,13 +10,15 @@ class Controller extends BoxesModel {
 
     public $viewsDirectory;
 
+    // Set the view directory
     public function __construct()
     {
         $this->viewsDirectory = dirname(__DIR__, 2) . '/public/views/';
     }
 
     // Render specified view
-    public function renderView($view){
-        return require_once($this->viewsDirectory . $view. '.php');
+    public function renderView($view)
+    {
+        return require_once($this->viewsDirectory . $view . '.php');
     }
-}
+};

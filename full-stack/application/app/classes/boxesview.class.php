@@ -16,4 +16,4 @@ class BoxesView
         return $this->data;
     }
 
-}
+};
