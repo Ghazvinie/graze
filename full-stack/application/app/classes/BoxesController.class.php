@@ -11,9 +11,13 @@ class BoxesController extends Controller
         return $this->renderView($view);
     }
 
-    public function getBoxesData($acctId)
+    public function setAccountId($acctId)
     {
         $this->accountId = $acctId;
+    }
+
+    public function getBoxesData()
+    {
         // Get the box ids from submitted account id
         $boxes = $this->getBoxes($this->accountId);
 
@@ -42,5 +46,10 @@ class BoxesController extends Controller
             $stars = str_repeat('* ', $rating);
             return $stars;
         }
+    }
+
+    public function setProductRating($num, $productId)
+    {
+        $this->setRating($this->accountId, $productId, $num);
     }
 }

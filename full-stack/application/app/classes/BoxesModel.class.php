@@ -47,4 +47,15 @@ class BoxesModel extends DBConnect {
         return $results;
     }
 
+    protected function setRating($accountId, $productId, $num){
+        $sql = "UPDATE rating SET rating = ? WHERE account_id = ? and product_id = ?";
+        $statement = $this->connectToDB()->prepare($sql);
+        $statement->execute([$num, $accountId, $productId]);
+
+        // $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        // return $results;
+    }
+
+
 }

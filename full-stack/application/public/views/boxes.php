@@ -16,9 +16,11 @@ $productsData = $boxesView->getData();
                         <div class='justify-content-center align-items-center m-2'>
                             <p class='text-center'><?php echo ucwords($text['name']); ?></p>
                             <div class='d-inline-flex justify-content-center align-items-center'>
-                                <p class='text-center fw-bold mb-0'>Rating: <?php echo $controller->getProductRating($text['id']) ?></p>
+                                <p class='text-center fw-bold mb-0'>Rating: <?php echo $controller->getProductRating($text['id']); ?></p>
                                 <form action='/changerating' method='POST'>
                                     <input class='w-25 h-25 mx-3' type='number' min='0' max='3' name='rating' />
+                                    <input type='hidden' name='product_id' value='<?php echo $text['id'];?>'/>
+                                    <input type='hidden' name='account_id' value='<?php echo $accountId;?>'/>
                                     <button class='btn btn-outline-success' type='submit'>Submit</button>
                                 </form>
                             </div>
