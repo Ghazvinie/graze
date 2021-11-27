@@ -1,10 +1,8 @@
 <?php 
 require dirname(__DIR__, 2) . '/app/controllers/boxesController.php';
-require dirname(__DIR__, 2) . '/app/classes/BoxesView.class.php';
 
-// print_r($productsData)
-$productsData = $data;
-// print_r($productsData);
+$productsData = $boxesView->getData();
+
 ?>
 <div class='container justify-content-center align-items-center mt-4'>
     <div class='row row-cols-4 justify-content-center align-items-center'>
@@ -18,6 +16,7 @@ $productsData = $data;
                         <div class='justify-content-center align-items-center m-2'>
                             <p class='text-center'><?php echo ucwords($text['name']); ?></p>
                             <div class='d-inline-flex justify-content-center align-items-center'> 
+                                <p class='text-center fw-bold mb-0'>Rating: <?php echo $controller->getProductRating($text['id'], $boxesModel) ?> </p>
                                 <form action='/changerating' method='POST'>
                                 <input class='w-25 h-25 mx-3' type='number' min='0' max='3' name='rating'/>
                                 <button class='btn btn-outline-success' type='submit'>Submit</button>
@@ -32,3 +31,5 @@ $productsData = $data;
     </div>
 </div>
 </div>
+
+

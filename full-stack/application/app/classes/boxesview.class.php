@@ -13,7 +13,6 @@ class BoxesView
     }
 
     public function getData(){
-        echo 'hi';
         return $this->data;
     }
 

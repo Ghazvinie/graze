@@ -1,18 +1,23 @@
 <?php
 require dirname(__DIR__) . '/classes/Controller.class.php';
 
+
 class BoxesController extends Controller
 {
-    public function boxesPost($view, $data)
+
+    public $accountId;
+
+    public function boxesPost($view)
     {
         // Render the view
         return $this->renderView($view);
     }
 
-    public function getBoxesData($accountId, $boxesModel)
-    {
+    public function getBoxesData($acctId, $boxesModel)
+    {   
+        $this->accountId = $acctId;
         // Get the box ids from submitted account id
-        $boxes = $boxesModel->getBoxes($accountId);
+        $boxes = $boxesModel->getBoxes($this->accountId);
 
         // Array for storing the boxes
         $makeBoxes = array();
@@ -28,5 +33,17 @@ class BoxesController extends Controller
             $makeBoxes[] = [$date['delivery_date'] => $temp]; // Set each box delivery date as key and then products array as value
         };
         return $makeBoxes;
+    }
+
+    public function getProductRating($productId, $boxesModel)
+    {
+        $rating = $boxesModel->getRating($this->accountId, $productId)[0]['rating'];
+;
+        if ($rating <= 0) {
+            return '*';
+        } else {
+            $stars = str_repeat('* ', $rating);
+            return $stars;
+        }
     }
 }
