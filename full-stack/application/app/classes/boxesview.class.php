@@ -1,41 +1,20 @@
 <?php
 
-require_once dirname(__FILE__) . '/Boxes.class.php';
-
-class BoxesView extends Box
+class BoxesView 
 {
-    public function showProducts($accountId)
-    {
-        //$rating = $this->getRating($accountId, $id['product_id']);
-        // print_r($rating['rating']);
+    /**
+     * @param data Boxes data
+     */
 
-        // Get the box ids from submitted account id
-        $boxes = $this->getBoxes($accountId);
+    public $data;
 
-        // Array for storing the boxes
-        $makeBoxes = array();
-
-        // Loop through box ids 
-        foreach ($boxes as $date) {
-            $products = array(); // Initiliase array for storing product data
-            $productIds = $this->getBoxToProduct($date['id']); // Get all product ids relating to each box id
-            foreach ($productIds as $id) {
-                $products[] = $this->getProducts($id['product_id']); // Get the individual products
-            }
-            $temp = array_merge(...$products); // Products has few empty arrays, remove these
-            $makeBoxes[] = [$date['delivery_date'] => $temp]; // Set each box delivery date as key and then products array as value
-        };
-        return $makeBoxes;
+    public function __construct($data){
+        $this->data = $data;
     }
 
-    public function getProductRating($accountId, $productId){
-        $rating = $this->getRating($accountId, $productId);
-        if (count($rating) <= 0 ){
-            return '*';
-        } else {
-            $count = $rating[0]['rating'];
-            $stars = str_repeat('* ', $count);
-            return $stars;
-        }
+    public function getData(){
+        echo 'hi';
+        return $this->data;
     }
+
 }
