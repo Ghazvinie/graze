@@ -4,7 +4,7 @@ require_once dirname(__FILE__) . '/DBConnect.class.php';
 class BoxesModel extends DBConnect {
 
     // Get the boxes for specific account id
-    public function getBoxes($accountId){
+    protected function getBoxes($accountId){
         $sql = "SELECT id, delivery_date FROM box WHERE account_id = ? ORDER BY delivery_date desc";
         $statement = $this->connectToDB()->prepare($sql);
         $statement->execute([$accountId]);
@@ -15,7 +15,7 @@ class BoxesModel extends DBConnect {
     }
 
     // Match box to products using box id
-    public function getBoxToProduct($boxId){
+    protected function getBoxToProduct($boxId){
         $sql = "SELECT product_id FROM box_to_product WHERE box_id = ?";
         $statement = $this->connectToDB()->prepare($sql);
         $statement->execute([$boxId]);
@@ -26,7 +26,7 @@ class BoxesModel extends DBConnect {
     }
 
     // Get the products for each box using product id
-    public function getProducts($productId){
+    protected function getProducts($productId){
         $sql = "SELECT id, name, image_url FROM product WHERE id = ?";
         $statement = $this->connectToDB()->prepare($sql);
         $statement->execute([$productId]);
@@ -37,7 +37,7 @@ class BoxesModel extends DBConnect {
     }
 
     // Get rating for box using account id and product id
-    public function getRating($accountId, $productId){
+    protected function getRating($accountId, $productId){
         $sql = "SELECT rating FROM rating WHERE account_id = ? and product_id = ?";
         $statement = $this->connectToDB()->prepare($sql);
         $statement->execute([$accountId, $productId]);
