@@ -10,15 +10,16 @@ class Router extends Request
     private $success = false;
 
     // Server get requests
-    public function get($route, $view)
+    public function get($route, $controller)
     {
+
         if ($this->method !== 'GET') {
             return false;
         };
 
         if ($this->uri === $route) {
             $this->success = true;
-            return include_once(dirname(__DIR__, 2) . '/public/views/' . $view);
+            return include_once(dirname(__DIR__, 1) . '/controllers/' . $controller . '.php');
         };
     }
 
@@ -31,7 +32,7 @@ class Router extends Request
 
         if ($this->uri === $route) {
             $this->success = true;
-            return include_once(dirname(__DIR__, 2) . '/public/views/' . $view);
+            return include_once(dirname(__DIR__, 1) . '/controllers/' . $controller . '.php');
         };
     }
 
