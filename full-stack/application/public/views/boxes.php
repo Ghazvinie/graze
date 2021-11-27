@@ -4,7 +4,7 @@ require dirname(__DIR__, 2) . '/app/controllers/boxesController.php';
 $productsData = $boxesView->getData();
 if (count($productsData) <= 0) {
     $errorMessage = 'No Boxes To Display';
-    $errorMessageSub = 'Did you provide an account number?';
+    $errorMessageSub = 'Did you provide a valid account number?';
 };
 
 ?>
