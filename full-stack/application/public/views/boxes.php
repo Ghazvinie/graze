@@ -19,7 +19,7 @@ $productsData = $boxesObj->showProducts($accountId);
                             <div class='d-inline-flex justify-content-center align-items-center'> 
                                 <p class='text-center fw-bold mb-0'>Rating: <?php echo $boxesObj->getProductRating($accountId, $text['id']) ?></p>
                                 <form action='/changerating' method='POST'>
-                                <input class='w-25 h-25 mx-3' type='number' min='0' max='3'/>
+                                <input class='w-25 h-25 mx-3' type='number' min='0' max='3' name='rating'/>
                                 <button class='btn btn-outline-success' type='submit'>Submit</button>
                                 </form>
 
