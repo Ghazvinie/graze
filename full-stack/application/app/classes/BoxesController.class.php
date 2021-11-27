@@ -3,19 +3,20 @@ require dirname(__DIR__) . '/classes/Controller.class.php';
 
 class BoxesController extends Controller
 {
+
+    /**
+     * @param accountId Users account id
+     */
+
     private $accountId;
 
-    public function boxesPost($view)
-    {
-        // Render the view
-        return $this->renderView($view);
-    }
-
+    // Set account id
     public function setAccountId($acctId)
     {
         $this->accountId = $acctId;
     }
 
+    // Get relevant data for display boxes and corresponding products
     public function getBoxesData()
     {
         // Get the box ids from submitted account id
@@ -37,6 +38,7 @@ class BoxesController extends Controller
         return $makeBoxes;
     }
 
+    // Get product rating
     public function getProductRating($productId)
     {
         $rating = $this->getRating($this->accountId, $productId)[0]['rating'];
@@ -48,8 +50,17 @@ class BoxesController extends Controller
         }
     }
 
+    // Set product rating
     public function setProductRating($num, $productId)
     {
         $this->setRating($this->accountId, $productId, $num);
+    }
+
+    // Sanitise inputs
+
+    public function sanitiseNum($numToSanitise){
+        $numWhiteSpaceRemoved = str_replace(' ', '', $numToSanitise);
+        $numToInt = (int)$numWhiteSpaceRemoved;
+        return $numToInt;
     }
 }

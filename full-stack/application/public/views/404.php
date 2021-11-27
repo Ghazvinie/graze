@@ -1,2 +1,1 @@
-<h1>404</h1>
-<?php
+<h1 class='text-center'>Invalid Route</h1>
