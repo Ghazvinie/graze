@@ -22,7 +22,6 @@ $productsData = $boxesObj->showProducts($accountId);
                                 <input class='w-25 h-25 mx-3' type='number' min='0' max='3' name='rating'/>
                                 <button class='btn btn-outline-success' type='submit'>Submit</button>
                                 </form>
-
                         </div>
                             <img width='100%' height='200' class='m-1' src=<?php echo $text['image_url']; ?>></img>
                         </div>
