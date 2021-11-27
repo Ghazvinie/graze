@@ -1,11 +1,11 @@
 <?php
-require dirname(__DIR__) . '/classes/controller.class.php';
+require dirname(__DIR__) . '/classes/Controller.class.php';
 
 class HomeController extends Controller
 {
     public function homeGet($view)
     {
-        // Get the correct view and require it
+        // Render the view
         return $this->renderView($view);
     }
 }

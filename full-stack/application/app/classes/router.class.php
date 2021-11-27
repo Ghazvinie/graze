@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__FILE__) . '/request.class.php';
+require_once dirname(__FILE__) . '/Request.class.php';
 
 class Router extends Request
 {
