@@ -36,7 +36,7 @@ class Box extends DBConnect {
         return $results;
     }
 
-    // Get rating for box or product ? using product id
+    // Get rating for box using account id and product id
     protected function getRating($accountId, $productId){
         $sql = "SELECT rating FROM rating WHERE account_id = ? and product_id = ?";
         $statement = $this->connectToDB()->prepare($sql);
@@ -47,10 +47,6 @@ class Box extends DBConnect {
         return $results;
     }
 
-    // protected function setRating($productId, $accountId, $rating){   
-    //     $sql = ""
-
-    // }
 
 
 }

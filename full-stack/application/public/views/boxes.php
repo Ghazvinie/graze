@@ -15,11 +15,11 @@ $productsData = $boxesObj->showProducts($accountId);
                     <p class='text-center fw-bold'>Contents:</p>
                         <?php foreach ($details as $key => $text) { ?>
                             <div class='justify-content-center align-items-center m-2'>
-                            <p class='text-center'><?php echo ucwords( $text['name']); ?></p>
+                            <p class='text-center'><?php echo ucwords( $text['name']);?></p>
+                            <p class='text-center fw-bold'>Rating: <?php echo $boxesObj->getProductRating($accountId, $text['id'])?></p>
                             <img width='100%' height='200' class='m-1'  src=<?php echo $text['image_url']; ?>></img>
                             </div>
                         <?php } ?>
-
                 <?php } ?>
             </div>
         <?php } ?>
