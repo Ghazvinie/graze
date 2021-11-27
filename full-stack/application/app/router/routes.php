@@ -8,4 +8,4 @@ $route->get('/', 'homeController');
 $route->get('', 'homeController');
 
 $route->post('/boxes', 'boxesController');  // Boxes POST Route
-$route->post('/changerating', 'boxesController');
+$route->post('/changerating', 'boxesController'); // Change product rating

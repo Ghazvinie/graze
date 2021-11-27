@@ -2,9 +2,15 @@
 require dirname(__DIR__, 2) . '/app/controllers/boxesController.php';
 
 $productsData = $boxesView->getData();
+if (count($productsData) <= 0){
+    $errorMessage = 'No Boxes To Display';
+    $errorMessageSub = 'Did you provide an account number?';
+};
 
 ?>
 <div class='container justify-content-center align-items-center mt-4'>
+    <h1 class='text-center'><?php echo $errorMessage ; ?></h1>
+    <h2 class='text-center'><?php echo $errorMessageSub ; ?></h2>
     <div class='row row-cols-4 justify-content-center align-items-center'>
         <?php foreach ($productsData as $key => $product) { ?>
             <div class='justify-content-center align-items-center col-md-3 my-5'>
