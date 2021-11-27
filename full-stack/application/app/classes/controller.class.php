@@ -8,4 +8,8 @@ class Controller {
     {
         $this->viewsDirectory = dirname(__DIR__, 2) . '/public/views/';
     }
+
+    public function renderView($view){
+        return include_once($this->viewsDirectory . $view. '.php');
+    }
 }
