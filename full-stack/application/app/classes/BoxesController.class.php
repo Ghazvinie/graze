@@ -42,10 +42,12 @@ class BoxesController extends Controller
     public function getProductRating($productId)
     {
         $rating = $this->getRating($this->accountId, $productId)[0]['rating'];
-        if ($rating <= 0) {
+        if ($rating == '') { // Rating is missing
             return '*';
+        } else if ($rating <= 0) { // Rating is set, but is 0
+            return 'Zero *';
         } else {
-            $stars = str_repeat('* ', $rating);
+            $stars = str_repeat('* ', $rating); // Set stars for rating
             return $stars;
         };
     }
@@ -57,7 +59,8 @@ class BoxesController extends Controller
     }
 
     // Sanitise input number
-    public function sanitiseNum($numToSanitise){
+    public function sanitiseNum($numToSanitise)
+    {
         $numWhiteSpaceRemoved = str_replace(' ', '', $numToSanitise);
         $numToInt = (int)$numWhiteSpaceRemoved;
         return $numToInt;

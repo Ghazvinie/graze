@@ -53,8 +53,8 @@ class BoxesModel extends DBConnect
 
     protected function setRating($accountId, $productId, $num)
     {
-        $sql = "UPDATE rating SET rating = ? WHERE account_id = ? and product_id = ?";
+        $sql = "INSERT INTO rating (product_id, account_id, rating) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE rating = ? ";
         $statement = $this->connectToDB()->prepare($sql);
-        $statement->execute([$num, $accountId, $productId]);
+        $statement->execute([$productId, $accountId, $num, $num]);
     }
 };
